@@ -1,0 +1,46 @@
+	<div class="TcNr flexC fl-cen">usdtBal
+		<div class="Tc-cfN  flexC fl-cen">
+			<!--拆分账户-开始-->
+			<div class="Tc-cfBK">
+				<div class="Tc-cfBD flex">
+					<div class="Tc-cfBDH ">USDT :</div>
+					<div class="Tc-cfBDS flex">
+						<input type="text" placeholder="50" readonly="true" [value]="this.freezingAmt"  class="Tc-cfBDI Huans freezingAmt">
+					</div>
+				</div>
+				<div class="Tc-cfBD flex">
+					<div class="Tc-cfBDH">
+						Amount :
+						<!--{cn} 金额-->
+					</div>					
+					<div class="Tc-cfBDS flex">
+						<input type="text" placeholder="" value="" class="Tc-cfBDSI Huans tAmount" [(ngModel)]="tAmount">
+						<div class="Tc-cfBDSz flexC fl-cen"><img src="assets/images/Group.png"><p class="mb-0" >USDT</p></div>
+						<div class="Tc-Word">
+							The ratio of 50
+							<!--{cn} 请输入50的倍数-->
+						</div>
+					</div>
+				</div>
+				<div class="Tc-cfBD flex">
+					<div class="Tc-cfBDH">
+						Receiver address :
+						<!--{cn} 收款地址-->
+					</div>
+					<div class="Tc-cfBDS flex">
+						<input type="text" placeholder="" value="" class="Tc-cfBDSI Huans receiver" [(ngModel)]="receiver">
+					</div>
+				</div>	
+				<div class="Tc-cfBmz flexC fl-end">
+					<a (click)="depositeFn()" class="Tc-cfBza Tc-cfBza1 depositFreezing">
+						Deposit
+						
+					</a>
+					<a (click)="transferFreezing()" class="Tc-cfBza Tc-cfBza2 transferFreezing">
+						Transfer
+						<!--{cn} 转出-->
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>

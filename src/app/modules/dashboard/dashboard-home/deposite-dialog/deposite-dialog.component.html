@@ -1,0 +1,62 @@
+        <div class="TcNr flexC fl-cen">
+            <div class="Tc-cfN  flexC fl-cen">
+                <div class="Tc-czDK">
+                    <div class="Tc-czBD">
+                        <div class="Tc-czBDS flexC fl-bet">
+                            <input type="text" placeholder="50"  (keyup)="numberOnly($event)"  value="" class="Tc-cfBDSI Huans inputAmount">
+                            <div class="Tc-cfBDSz flexC fl-cen"><img src="assets/images/Group.png"><p class="mb-0" >USDT</p></div>
+                        </div>
+                        <div class="Tc-czBDP">
+                            Minimum deposit 50USDT. A ratio of 50 max 2000
+                            
+                        </div>
+                    </div>
+    
+                    <div class="Tc-czDS Huans">
+                        <div class="Tc-czDfc">
+                            <div class="Tc-czDfcB flexC fl-bet">
+                                <h3><span class="depositAmount">{{depositeAmount}}</span><span>USDT</span></h3>
+                                <p>+</p>
+                                <h3>20<span>%</span></h3>
+                                <p>=</p>
+                                <h3><span class="total">{{this.total}}</span><span>USDT</span></h3>
+                            </div>
+                            <div class="Tc-czDfcP flexC fl-bet">
+                                <p>
+                                    Deposit
+                                    
+                                </p>
+                                <p>
+                                    Each cycle
+                                    
+                                </p>
+                                <p>
+                                    Deposit and interest
+                                    
+                                </p>
+                            </div>
+                        </div>
+                        <div class="Tc-czDSp">
+                            <p>
+                                10 days per cycle. 20% per cycle 
+                                
+                            </p>
+                            <p>
+                                You will have to redeposit every time after each cycle. It will have to be either the same amount or bigger amount. Every 2 cycle you deposit 1 extra days will be added without extra interest. Maximum 45 days.
+                                
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="Tc-cfB flexC fl-end">
+                        <a (click)="dilogRef.close()" class="Tc-cfBa Tc-cfBel flexC fl-cen close">
+                            Cancel
+                            
+                        </a>
+                        <a (click)="depositeConfirm()" class="Tc-cfBa Tc-cfBqd flexC fl-cen depositsBut">
+                            Confirm
+                            
+                        </a>
+                    </div>
+                </div>	
+            </div>

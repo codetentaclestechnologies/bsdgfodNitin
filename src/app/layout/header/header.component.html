@@ -1,0 +1,129 @@
+<!-- <header class="header Huans flexC">
+	<a href="javascript:;" class="hdlogo flexC"><img src="assets/images/home/logo.png"><p>BSG</p></a>
+	<div class="hdR flexC" *ngIf="!isConnected">
+		<a (click)="connect()" class="hdLik linkWallet">
+			Connect
+		</a>
+	</div>              
+	<div class="hdR flexC" *ngIf="isConnected">
+		<a  class="hdLik linkWallet">
+			{{ address?.substring(0, 4) }}....{{
+				address?.substring(38, 42)
+				}}
+		</a>
+	</div>              
+</header> -->
+
+<section class="fixed-top" >
+	<!-- <header class="header Huans flexC" style="background-color: #14141694;" >
+	
+		<div class="container-fluid">
+			<div class="hdFS flexC fl-bet d-flex">
+				<div class="hdFSN flexC">
+					<i class="fa-solid fa-location-dot" style="    color: hwb(44deg 10% 0%);
+					border: 1px solid hwb(44deg 10% 0%);
+					border-radius: 50%;
+					padding: 6px 8px;
+					font-size: 12px;" ></i>
+					<p style="    margin: 0 7px;
+					font-size: 12px;
+					letter-spacing: 0.6px;color: white;" >
+						Contract address:
+					{cn} 合约地址:
+					</p>
+					&nbsp;
+					<div class="hdFSNp contractAddress" style="font-size: 12px;
+					color: rgb(255,195,26);" >{{contractAddress}}</div>
+					<i class="fa-regular fa-copy text-white" style="font-size:12px; margin-left:10px" ></i>
+				</div>
+				<div class="hdFSN flexC">
+					<i class="fa-solid fa-clock" style="    color: hwb(44deg 10% 0%);
+					border: 1px solid hwb(44deg 10% 0%);
+					border-radius: 50%;
+					padding: 6px 8px;
+					font-size: 12px;"></i>
+					<p style="    margin: 0 7px;
+					font-size: 12px;
+					letter-spacing: 0.6px; color: white;" >
+						Platform Running time: 
+						<!--{cn} 平台运行时间:
+					</p>
+					&nbsp;
+					<div class="hdFSNp runTime">
+						<app-timer-count-down *ngIf="runTime!=undefined" [time]="runTime" style="color: #ffc31a;" ></app-timer-count-down>
+					</div>
+				</div>
+				<div class="hdFSN flexC">
+					<i class="fa-solid fa-heart" style="    color: hwb(44deg 10% 0%);
+					border: 1px solid hwb(44deg 10% 0%);
+					border-radius: 50%;
+					padding: 6px 8px;
+					font-size: 12px;"></i>
+					<p style="    margin: 0 7px;
+					font-size: 12px;
+					letter-spacing: 0.6px; color: white;" >
+						Income:
+						<!--{cn} 周期收益:
+					</p>
+					&nbsp;
+					<div class="hdFSNp" style="font-size: 12px;
+					color: rgb(255,195,26);" >
+						15 days per cycle. Monthly 45% 
+						<!--{cn} 每周期22.5%
+					</div>
+				</div>
+				<div class="hdFSN flexC">
+					<i class="fa-solid fa-gauge" style="    color: hwb(44deg 10% 0%);
+					border: 1px solid hwb(44deg 10% 0%);
+					border-radius: 50%;
+					padding: 6px 8px;
+					font-size: 12px;"></i>
+					<p style="    margin: 0 7px;
+					font-size: 12px;
+					letter-spacing: 0.6px; color: white;">
+						Deposit time:
+						<!--{cn} 存款倒计时:
+					</p>
+					&nbsp;
+					<div class="hdFSNp depositCountDown">
+						<app-timer-count-down *ngIf="depositCountDown!==0; else e"[time]="depositCountDown"></app-timer-count-down>
+						<ng-template #e>
+							<p style="font-size: 12px;
+							color: rgb(255,195,26);margin: 12px; ">00:00:00</p>
+						</ng-template>
+					</div>
+				</div>
+			</div>
+			 <div class="hdR flexC" *ngIf="!isConnected">
+				<a (click)="connect()" class="hdLik linkWallet">
+					Connect
+				</a>
+			</div>              
+			<div class="hdR flexC" *ngIf="isConnected">
+				<a  class="hdLik linkWallet">
+					{{ address?.substring(0, 6)}}
+				</a>
+			</div>  
+		</div>              
+	</header> -->
+	<header class="header secondheader Huans flexC " >
+		<div class="container p-0">
+			
+		
+			<div class="d-flex">
+				<a routerLink="/root-home" class=" flexC"><h1 class="text-white mb-0" >Overdrive</h1></a>
+				<div class="hdR flexC" *ngIf="!isConnected">
+					<a (click)="connect()" class="contributebutton linkWallet">
+						Connect
+					</a>
+				</div>              
+				<div class="hdR flexC" *ngIf="isConnected">
+					<a  class="contributebutton linkWallet">
+						{{ address?.substring(0, 6)}}
+					</a>
+				</div>    
+			</div>
+		</div>
+				   
+	</header>
+</section>

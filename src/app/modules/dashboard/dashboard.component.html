@@ -1,0 +1,120 @@
+<div class="main Huans" style="background-color: #0d102c">
+	
+<div class="header"></div>
+<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
+
+<label for="openSidebarMenu" class="sidebarIconToggle">
+  <div class="spinner diagonal part-1"></div>
+  <div class="spinner horizontal"></div>
+  <div class="spinner diagonal part-2"></div>
+</label>
+<div id="sidebarMenu">
+  <ul class="sidebarMenuInner" >
+   
+		<li class="Huans" [ngClass]="currentUrl == 'dashboard' ? 'active' : ''"><a routerLink="/dashboard" class="NavA on flexC"><i class="fa-solid fa-gauge NavI  " ></i><p class="m-0" >
+			Dashboard
+			
+		</p></a></li>
+		<li class="Huans" [ngClass]="currentUrl == 'my-team' ? 'active' : ''"><a routerLink="my-team" class="NavA flexC"><i class="fa-solid fa-user-plus NavI"></i><p class="m-0">
+			My Team
+			
+		</p></a></li>
+		<li class="Huans" [ngClass]="currentUrl == 'deposite-details' ? 'active' : ''"><a routerLink="deposite-details" class="NavA flexC"><i class="fa-solid fa-circle-info NavI"></i><p class="m-0">
+			Deposit Details
+			
+		</p></a></li>
+		<li class="Huans"><a  class="NavA flexC"><i class="NavI NavI4"></i><p class="m-0">
+			Rules
+			
+		</p></a></li>
+		<li class="Huans"><a  class="NavA flexC"><i class="NavI NavI5"></i><p class="m-0">
+			White Paper
+			
+		</p></a></li>
+		<li class="Huans"><a class="NavA flexC"><i class="NavI NavI6"></i><p class="m-0">
+			Audit Report
+			
+		</p></a></li>
+	
+  </ul>
+  
+</div>
+  <!--头-开始-->
+  <!-- <header class="header Huans flexC">
+		<a href="javascript:;" class="hdlogo flexC"><img src="assets/images/logo.png"><p>BSG</p></a>
+		<div class="hdFS flexC fl-bet">
+			<div class="hdFSN flexC">
+				<img src="assets/images/hdMI01.png">
+				<p>
+					Contract address:
+				</p>
+				&nbsp;
+				<div class="hdFSNp contractAddress">...</div>
+			</div>
+			<div class="hdFSN flexC">
+				<img src="assets/images/hdMI02.png">
+				<p>
+					Platform Running time:
+				</p>
+				&nbsp;
+				<div class="hdFSNp runTime">...</div>
+			</div>
+			<div class="hdFSN flexC">
+				<img src="assets/images/hdMI03.png">
+				<p>
+					Income:
+				</p>
+				&nbsp;
+				<div class="hdFSNp">
+					15 days per cycle. Monthly 45% 
+				</div>
+			</div>
+			<div class="hdFSN flexC">
+				<img src="assets/images/hdMI04.png">
+				<p>
+					Deposit time:
+				</p>
+				&nbsp;
+				<div class="hdFSNp depositCountDown">...</div>
+			</div>
+		</div>
+		<div class="hdR flexC">
+		
+			<a href="javascript:;" class="hdLik linkWallet">
+				Connect
+			</a>
+		</div>              
+	</header> -->
+  <!--头-结束-->
+  <!--左边-开始-->
+ <div class="NavK " >
+		<ul>
+			<li class="Huans " [ngClass]="currentUrl == 'dashboard' ? 'active' : ''" ><a routerLink="/dashboard" class="NavA on flexC"><i class="fa-solid fa-gauge NavI" ></i><p class="m-0" >
+				Dashboard
+				
+			</p></a></li>
+			<li class="Huans" [ngClass]="currentUrl == 'my-team' ? 'active' : ''"><a routerLink="my-team" class=" Huans NavA flexC"><i class="fa-solid fa-user-plus NavI"></i><p class="m-0">
+				My Team
+				
+			</p></a></li>
+			<li class="Huans" [ngClass]="currentUrl == 'deposite-details' ? 'active' : ''"><a routerLink="deposite-details" class=" Huans NavA flexC"><i class="fa-solid fa-circle-info NavI"></i><p class="m-0">
+				Deposit Details
+				
+			</p></a></li>
+			<li class="Huans"><a  class="NavA flexC"><i class="NavI NavI4"></i><p class="m-0">
+				Rules
+				
+			</p></a></li>
+			<li class="Huans"><a  class="NavA flexC"><i class="NavI NavI5"></i><p class="m-0">
+				White Paper
+				
+			</p></a></li>
+			<li class="Huans"><a class="NavA flexC"><i class="NavI NavI6"></i><p class="m-0">
+				Audit Report
+				
+			</p></a></li>
+		</ul>
+	</div>
+  <router-outlet></router-outlet>
+</div>
+

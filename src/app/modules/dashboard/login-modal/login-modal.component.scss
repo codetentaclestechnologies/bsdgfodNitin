@@ -1,0 +1,31 @@
+.contributebutton {
+    background-image: linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
+    margin: 10px;
+    padding: 8px 26px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: none;
+    border-radius: 10px;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin: auto;
+  }
+
+  .contributebutton:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .loginhead{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+  }
+
+  

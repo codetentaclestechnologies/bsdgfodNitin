@@ -1,0 +1,48 @@
+.contributebutton {
+    background-image: linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
+    margin: 10px;
+    padding: 14px 24px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: none;
+    border-radius: 0px;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin: auto;
+  }
+  .contributebutton1 {
+    background: transparent;
+    border-width: 1px !important;
+                    border-style: solid !important;
+                    border-image: linear-gradient(to right, darkblue, darkorchid) 1 !important;
+    margin: 10px;
+    padding: 14px 24px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: none;
+    border-radius: 10px;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin: auto;
+  }
+
+
+  .contributebutton:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .loginhead{
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+  }

@@ -1,0 +1,58 @@
+<div class="Huans madk flex fl-bet">
+    <div class="depDK">
+        <div class="depTit Huans flexC fl-bet">
+            <div class="depTitH">
+                Deposit details
+                <!--{cn} 存款详情-->
+            </div>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DepTab">
+            <tr>
+                <th scope="col">
+                    Amount
+                    <!--{cn} 存款金额-->
+                </th>
+                <th scope="col">
+                    Deposit Date
+                    <!--{cn} 存款日期-->
+                </th>
+                <th scope="col">
+                    Unfreeze Time
+                    <!--{cn} 解冻日期-->
+                </th>
+                <th scope="col">
+                    Reward
+                    <!--{cn} 周期收益-->
+                </th>
+                <th scope="col" class="DepTabB fl-cen flexC">
+                    Order Status
+                    <!--{cn} 订单状态-->
+                    &ensp;<a  class="dasDenLhp" (click)="isShowStatusFn()"><img src="assets/images/help-circle.png"></a>
+                    <div class="DepTabBN"  *ngIf="isShowStatus">
+                        <p class="DepC1">
+                            * Freezing: Unmaturity of deposit
+                            <!--{cn} * 未解冻: 存款未到期-->
+                        </p>
+                        <p class="DepC3">
+                            * Completed: unfreeze and withdrawal completed
+                            <!--{cn} * 待关联：存款到期尚未关联-->
+                        </p>
+                        <p class="DepC6">
+                            * Available withdraw: Withdrawable
+                            <!--{cn} * 已完成：取款完成-->
+                        </p>
+                    </div>
+                </th>
+            </tr>
+              <tr *ngFor="let item of depositeTableData">
+                <td>{{item.amount}}</td>
+                <td>{{item.startDate}}</td>
+                <td>{{item.unfreezeDate}}</td>
+                <td>{{item.income}}</td>
+                <td>{{item.status}}</td>
+              </tr>
+        </table>
+    
+    </div>
+    
+</div>

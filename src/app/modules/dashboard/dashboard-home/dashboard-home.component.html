@@ -1,0 +1,543 @@
+<section>
+  <div class="container-fluid" style="padding: 4px">
+    <div class="Huans madk flex fl-bet">
+      <div class="madW1" style="width: 100%">
+        <div class="row" style="width: 100%; margin: auto">
+          <div class="col-12 col-md-6 firsrow">
+            <div class="madbck dasNuz Huans">
+              <div class="row" style="width: 100%; margin: auto">
+                <div class="col-12 col-md-6 p-0" style="padding-right: 0">
+                  <a
+                    href="javascript:;"
+                    class="dasNuzA dasNuzA1 Huans flexC fl-bet"
+                  >
+                    <div class="dasNuzN">
+                      <h3 class="mb-0">
+                        Players
+                        <!--{cn} 玩家数量-->
+                      </h3>
+                      <p>
+                        <span class="totalUser">{{ totalUser }}</span>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 col-md-6 p-0" style="padding-left: 10px">
+                  <a
+                    href="javascript:;"
+                    class="dasNuzA dasNuzA2 Huans flexC fl-bet"
+                  >
+                    <div class="dasNuzN">
+                      <h3 class="mb-0">
+                        Daily Lucky Pool
+                        <!--{cn} 幸运奖池-->
+                      </h3>
+                      <p class="luckPool">${{ luckPool }}</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 col-md-6 p-0" style="padding-right: 0">
+                  <a
+                    href="javascript:;"
+                    class="dasNuzA dasNuzA3 Huans flexC fl-bet"
+                  >
+                    <div class="dasNuzN">
+                      <h3 class="mb-0">
+                        Daily 4 Star Pool
+                        <!--{cn} 四星奖池-->
+                      </h3>
+                      <p class="starPool">${{ starPool }}</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 col-md-6 p-0" style="padding-left: 10px">
+                  <a
+                    href="javascript:;"
+                    class="dasNuzA dasNuzA4 Huans flexC fl-bets"
+                  >
+                    <div class="dasNuzN">
+                      <h3 class="mb-0">
+                        Daily Top 3 Pool
+                        <!--{cn} TOP奖池-->
+                      </h3>
+                      <p class="topPool">${{ topPool }}</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-sm-12 col-md-6 p-0">
+            <div class="madbck dasTck Huans fl-bet">
+              <div class="row" style="width: 100%; margin: auto">
+                <div class="col-md-8" style="padding: 0px 0px 44px 0px">
+                  <div class="hdFSN d-flex">
+                    <img src="assets/images/homeimage/icons8-contract-50.png" alt="">
+                    <!-- <i
+                      class="fa-solid fa-location-dot"
+                      style="
+                       color: hwb(0deg 100% 0%);
+    border: 1px solid hwb(284deg 20% 42%);
+    border-radius: 50%;
+    padding: 10px 12px;
+    font-size: 26px;
+    background: #823491;
+                      "
+                    ></i> -->
+                    <div class="d-block" style="margin-left: 11px;width: 78%;">
+                      <p
+                        style="
+                          margin: 0 7px;
+                          font-size: 12px;
+                          letter-spacing: 0.6px;
+                          color: white;
+                        "
+                      ></p>
+                      <h3 class="text-white mb-0">Contract address:</h3>
+                      <!-- {cn} 合约地址: -->
+
+                      <div class="d-flex">
+                        <div
+                          class="hdFSNp contractAddress text-truncate"
+                          style="font-size: 18px; color: rgb(255, 195, 26)"
+                        >
+                          {{ contractAddress }}
+                        </div>
+                        <i [cdkCopyToClipboard]="myAddress"
+                          class="fa-regular fa-copy text-white"
+                          style="font-size: 18px; margin-left: 10px; cursor: pointer;"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4" style="padding: 0px 0px 44px 0px">
+                  <div class="hdFSN flexC">
+                    <div class="d-flex">
+                      <i
+                        class="fa-solid fa-clock"
+                        style="
+                           color: hwb(0deg 100% 0%);
+    border: 1px solid hwb(284deg 20% 42%);
+                          border-radius: 50%;
+                          padding: 9px 9px;
+                          font-size: 34px;
+                          background: #823491;
+                        "
+                      ></i>
+
+                      <div class="d-block" style="margin-left: 11px">
+                        <h3 class="text-white mb-0">Platform Running time:</h3>
+
+                        <div class="hdFSNp runTime">
+                          <app-timer-count-down
+                            *ngIf="runTime != undefined"
+                            [time]="runTime"
+                            style="color: #ffc31a"
+                          ></app-timer-count-down>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8" style="padding: 0px 0px 12px 0px">
+                  <div class=" flexC">
+                    <div class="d-flex">
+                      <i
+                        class="fa-solid fa-dollar-sign"
+                        style="
+                           color: hwb(0deg 100% 0%);
+    border: 1px solid hwb(284deg 20% 42%);
+                          border-radius: 50%;
+                          padding: 15px 20px;
+                          font-size: 26px;
+                          background: #823491;
+                        "
+                      ></i>
+                     <div class="d-block" style="margin-left: 11px">
+                        <h3 class="text-white mb-0">Income :</h3>
+                       
+                        <div
+                          class=""
+                          style="font-size: 12px; color: rgb(255, 195, 26)"
+                        >
+                          <p class="mb-0" style="font-size: 18px; color: rgb(255, 195, 26)">
+                            10 days per cycle. Monthly 60%
+                          </p>
+                        </div>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4" style="padding: 0px 0px 12px 0px">
+                  <div class=" flexC">
+                    <i
+                      class="fa-solid fa-gauge"
+                      style="
+                         color: hwb(0deg 100% 0%);
+    border: 1px solid hwb(284deg 20% 42%);
+                          border-radius: 50%;
+                          padding: 9px 9px;
+                          font-size: 34px;
+                          background: #823491;
+                      "
+                    ></i>
+                   <div class="d-block" style="margin-left: 11px" >
+                    <h3 class="mb-0 text-white" >  Deposit time:</h3>
+                   
+                    <div class="hdFSNp depositCountDown">
+                      <app-timer-count-down
+                        *ngIf="depositCountDown !== 0; else e"
+                        [time]="depositCountDown"
+                      ></app-timer-count-down>
+                      <ng-template #e>
+                        <p
+                          style="
+                            font-size: 18px;
+                            color: rgb(255, 195, 26);
+                            
+                          "
+                        >
+                          00:00:00
+                        </p>
+                      </ng-template>
+                    </div>
+                   </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="madbck dasTck Huans flexC fl-bet">
+              <div class="row" style="width: 100%; margin: auto">
+                <!-- <div class="col-md-3 p-0" *ngIf="showRegister">
+                  <div class="dasTckN Huans flexC fl-bet">
+                    <div class="dasTckI">
+                      <img src="assets/images/dasTcI01.png" />
+                    </div>
+                    <a (click)="register()" class="deposite dasTckNA dasTckA1">
+                      Register
+                    </a>
+                  </div>
+                </div> -->
+                <!-- *ngIf="!showRegister" -->
+                <div class="col-md-3 p-0">
+                  <div class="dasTckN Huans flexC fl-bet">
+                    <div class="dasTckI">
+                      <img src="assets/images/dasTcI01.png" />
+                    </div>
+                    <a (click)="deposite()" class="deposite dasTckNA dasTckA1">
+                      Deposit
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-3 p-0">
+                  <div class="dasTckN Huans flexC fl-bet">
+                    <div class="dasTckI">
+                      <img src="assets/images/dasTcI02.png" />
+                    </div>
+                    <a (click)="withdraw()" class="withdraw dasTckNA dasTckA2">
+                      Withdraw
+                      <!--{cn} 取款-->
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-3 p-0">
+                  <div class="dasTckN Huans flexC fl-bet">
+                    <div class="dasTckI">
+                      <img src="assets/images/dasTcI03.png" />
+                    </div>
+                    <a
+                      (click)="splitAccount()"
+                      class="account dasTckNA dasTckA3"
+                    >
+                      Split account
+                      <!--{cn} 拆分账户-->
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-3 p-0">
+                  <div class="dasTckN Huans flexC fl-bet">
+                    <div class="dasTckI">
+                      <img src="assets/images/dasTcI04.png" />
+                    </div>
+                    <a
+                      href="https://www.tokengoodies.com/trade"
+                      target="_blank"
+                      class="lend dasTckNA dasTckA4"
+                    >
+                      Energy Lend
+                      <!--{cn} 租能量-->
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="madbck dasDen Huans flexC fl-bet">
+          <div class="row" style="width: 100%; margin: auto">
+            <div class="col-md-6" style="padding-right: 0; padding-left: 20px">
+              <div class="dasDenL Huans flexC fl-bet">
+                <div class="dasDenLP flexC">
+                  <h3 class="mb-0">
+                    My level :
+                    <!--{cn} 我的等级-->
+                  </h3>
+                  <div class="dasDenLs flexC">
+                    <img class="level" src="assets/images/star01.png" />
+                    <img class="level" src="assets/images/star01.png" />
+                    <img class="level" src="assets/images/star01.png" />
+                    <img class="level" src="assets/images/star01.png" />
+                    <img class="level" src="assets/images/star01.png" />
+                  </div>
+                  <a href="javascript:;" class="dasDenLhp levelCircle">
+                    <img src="assets/images/help-circle.png" />
+                  </a>
+                  <p class="levelHint">
+                    one-star player, two-star player, three-star player,
+                    four-star player, five-star player
+                    <!--{cn} 一星玩家，二星玩家，三星玩家，四星玩家，五星玩家-->
+                  </p>
+                </div>
+                <div class="dasDenLP flexC">
+                  <h3 class="mb-0">
+                    Income :
+                    <!--{cn} 总收益-->
+                  </h3>
+                  <div class="dasDenLPn">
+                    $<span class="withdrawn">{{ totalWithdrawn }}</span>
+                  </div>
+                </div>
+                <div class="dasDenLP flexC">
+                  <h3 class="mb-0">
+                    Referral :
+                    <!--{cn} 我的邀请人-->
+                  </h3>
+                  <div class="dasDenLPn referAddr">{{ referrer }}</div>
+                </div>
+              </div>
+              <div class="dasDenL Huans flexC fl-bet">
+                <div class="dasDenLP flexC">
+                  <h3 class="mb-0">
+                    BNB Balance :
+                    <!--{cn} TRX余额-->
+                  </h3>
+                  <div class="dasDenLPn trxBal">{{ trxbalance }}</div>
+                </div>
+                <div class="dasDenLP flexC">
+                  <h3 class="mb-0">
+                    USDT Balance :
+                    <!--{cn} USDT余额-->
+                  </h3>
+                  <div class="dasDenLPn usdtBal">{{ usdtBalance }}</div>
+                </div>
+
+                <div class="dasDenLP flexC">
+                  <h3 class="mb-0">
+                    My address :
+                    <!--{cn} 我的链接-->
+                  </h3>
+                  <!-- <div class="dasDenLPn myAddr">...</div> -->
+                  <input
+                    type="text"
+                    id="ref-link"
+                    style="
+                      background: transparent;
+                      border: 0px;
+                      color: #fff;
+                      width: 300px;
+                    "
+                    class="refLink"
+                    readonly="readonly"
+                    [cdkCopyToClipboard]="myAddress"
+                    [value]="myAddress"
+                  />
+                  <a [cdkCopyToClipboard]="myAddress" class="dasDenLc copyLink">
+                    Copy
+                    <!--{cn} 复制-->
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" style="padding: 0">
+              <div class="dasJia dasJia1 Huans flexC fl-cen secondrow">
+                <div class="dasJiaL flexC">
+                  <div class="dasJiaLI">
+                    <img src="assets/images/dasJia1.png" />
+                  </div>
+                  <div class="dasJiaLN">
+                    <h3>
+                      Lucky Reward
+                      <!--{cn} 幸运奖-->
+                    </h3>
+                    <p>
+                      Time Remaning
+                      <!--{cn} 最终奖励倒计时-->
+                    </p>
+                  </div>
+                </div>
+                <div class="dasJiaC flexC fl-cen">
+                  <div class="dasJiaCn hourStart">{{ hourStart }}</div>
+                  <div class="dasJiaCn hourEnd">{{ hourEnd }}</div>
+                  <p>:</p>
+                  <div class="dasJiaCn minuteStart">{{ minuteStart }}</div>
+                  <div class="dasJiaCn minuteEnd">{{ minuteEnd }}</div>
+                  <p>:</p>
+                  <div class="dasJiaCn secondStart">{{ secondStart }}</div>
+                  <div class="dasJiaCn secondEnd">{{ secondEnd }}</div>
+                </div>
+                <div class="dasJiaR flexC fl-end">
+                  <p>Info</p>
+                  <a href="javascript:;" class="dasDenLhp luckCircle">
+                    <img src="assets/images/help-circle.png" />
+                  </a>
+                  <div class="luckHint">
+                    Daily last 10 depositor shall be rewarded
+                    <!--{cn} 24小时新激活的钱包地址倒数10名分配奖池，详细规则阅读游戏规则-->
+                  </div>
+                </div>
+              </div>
+              <div class="dasJia dasJia2 Huans flexC fl-cen">
+                <div class="dasJiaL flexC">
+                  <div class="dasJiaLI">
+                    <img src="assets/images/dasJia2.png" />
+                  </div>
+                  <div class="dasJiaLN">
+                    <h3>
+                      Daily top reward
+                      <!--{cn} TOP奖-->
+                    </h3>
+                    <p>
+                      Time Remaning
+                      <!--{cn} 最终奖励倒计时-->
+                    </p>
+                  </div>
+                </div>
+                <div class="dasJiaC flexC fl-cen">
+                  <div class="dasJiaCn hourStart">{{ hourStart }}</div>
+                  <div class="dasJiaCn hourEnd">{{ hourEnd }}</div>
+                  <p>:</p>
+                  <div class="dasJiaCn minuteStart">{{ minuteStart }}</div>
+                  <div class="dasJiaCn minuteEnd">{{ minuteEnd }}</div>
+                  <p>:</p>
+                  <div class="dasJiaCn secondStart">{{ secondStart }}</div>
+                  <div class="dasJiaCn secondEnd">{{ secondEnd }}</div>
+                </div>
+                <div class="dasJiaR flexC fl-end">
+                  <p>Info</p>
+                  <a href="javascript:;" class="dasDenLhp topCircle"
+                    ><img src="assets/images/help-circle.png"
+                  /></a>
+                  <div class="topHint">
+                    Top 3 inviter daily shall split the pool daily.
+                  </div>
+                </div>
+              </div>
+              <div class="dasJia dasJia3 Huans flexC fl-cen">
+                <div class="dasJiaL flexC">
+                  <div class="dasJiaLI">
+                    <img src="assets/images/dasJia3.png" />
+                  </div>
+                  <div class="dasJiaLN">
+                    <h3>4 Star reward</h3>
+                    <p>Time Remaning</p>
+                  </div>
+                </div>
+                <div class="dasJiaC flexC fl-cen">
+                  <div class="dasJiaCn hourStart">{{ hourStart }}</div>
+                  <div class="dasJiaCn hourEnd">{{ hourEnd }}</div>
+                  <p>:</p>
+                  <div class="dasJiaCn minuteStart">{{ minuteStart }}</div>
+                  <div class="dasJiaCn minuteEnd">{{ minuteEnd }}</div>
+                  <p>:</p>
+                  <div class="dasJiaCn secondStart">{{ secondStart }}</div>
+                  <div class="dasJiaCn secondEnd">{{ secondEnd }}</div>
+                </div>
+                <div class="dasJiaR flexC fl-end">
+                  <p>Info</p>
+                  <a href="javascript:;" class="dasDenLhp starCircle"
+                    ><img src="assets/images/help-circle.png"
+                  /></a>
+                  <div class="starHint">
+                    4 star player shall split the daily pool daily.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="madW2">
+        <div class="row" style="width: 100%; margin: auto">
+          <div class="col-md-4" style="padding-left: 0; padding-right: 10px">
+            <div class="madbck daRiz Huans">
+              <div class="daRizT">Latest Depositors</div>
+              <div class="daRizN flexC fl-bet">
+                <a
+                  href="javascript:;"
+                  class="daRiza flexC fl-bet"
+                  *ngFor="let item of latestDeposit"
+                >
+                  <div class="daRizaP latestDeposit">
+                    {{ item.userAddress }}
+                  </div>
+                  <div class="daRizaW">{{ item.date }}</div>
+                  <div class="daRizaS flexC">
+                    <img src="assets/images/Group.png" />
+                    <p class="latestAmount">${{ item.amount }}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" style="padding-left: 0; padding-right: 0px">
+            <div class="madbck daRiz Huans">
+              <div class="daRizT">Lucky Player</div>
+              <div class="daRizN flexC fl-bet">
+                <a
+                  href="javascript:;"
+                  class="daRiza flexC"
+                  *ngFor="let item of luckUsers; let i = index"
+                >
+                  <div class="daRizaU">{{ i + 1 }}</div>
+                  <div class="daRizaM luckUser">
+                    {{ item.userAddress }}
+                  </div>
+                  <div class="daRizaS flexC">
+                    <img src="assets/images/Group.png" />
+                    <p class="luckDeposit">{{ item.amount }}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" style="padding-left: 10px; padding-right: 0px">
+            <div class="madbck daRiz Huans">
+              <div class="daRizT">Top 3 Player</div>
+              <div class="daRizNN flexC fl-bet">
+                <a
+                  href="javascript:;"
+                  class="daRiza flexC"
+                  *ngFor="let item of top3LuckyPlayers; let i = index"
+                >
+                  <div class="daRizaU">{{ i + 1 }}</div>
+                  <div class="daRizaM dayTopUser">
+                    {{ item }}
+                  </div>
+                  <div class="daRizNz">
+                    <img src="assets/images/north_east.png" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
