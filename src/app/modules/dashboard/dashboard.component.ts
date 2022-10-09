@@ -32,12 +32,6 @@ export class DashboardComponent implements OnInit {
 
   });
 
-  this.openLoginDialog();
   }
 
-
-
-  openLoginDialog(){
-    this.matDialog.open(LoginModalComponent)
-  }
 }

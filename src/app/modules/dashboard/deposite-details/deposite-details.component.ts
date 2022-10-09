@@ -19,7 +19,6 @@ export class DepositeDetailsComponent implements OnInit {
   }
 
   async updateOrders() {
-    debugger
     let length = await this.cs.getDepositeDetailOrederLength(
       localStorage.getItem('address')
     );
