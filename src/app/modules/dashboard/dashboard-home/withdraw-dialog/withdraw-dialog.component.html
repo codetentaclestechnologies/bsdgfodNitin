@@ -35,7 +35,7 @@
 					</div>
 					<div class="Tc-qkNS"><span class="level5Reward">{{item.level5Left}}</span>USDT</div>
 				</div>
-				<div class="Tc-qkNz flexC fl-bet" style="font-size: 10px; margin-left: 15px; height: 20px;">
+				<div class="Tc-qkNz flexC fl-bet" >
 					<div class="Tc-qkNH">
 						Freezing
 					</div>
@@ -54,8 +54,8 @@
 					</div>
 					<div class="Tc-qkNS"><span class="starReward">{{item.star}}</span>USDT</div>
 				</div>
-				<div class="Tc-qkNz flexC fl-bet">
-					<div class="Tc-qkNH">
+				<div class="Tc-qkNz flexC fl-bet border-0">
+					<div class="Tc-qkNH ">
 						Top player reward
 					</div>
 					<div class="Tc-qkNS"><span class="topReward">{{item.top}}</span>USDT</div>
@@ -68,7 +68,7 @@
 				<div class="Tc-qkNS"><span class="totalReward">{{item.capitals + item.statics + item.directs + item.level4Released + item.level5Left + item.level5Freezed + item.luck + item.star + item.top}}</span>USDT</div>
 			</div>
 			<div class="Tc-qkb fl-end flexC">
-				<a (click)="withdrawAmount()" class="Tc-qkBut withdrawBut">
+				<a (click)="withdrawAmount()" class=" contributebutton">
 					Withdraw
 				</a>
 			</div>

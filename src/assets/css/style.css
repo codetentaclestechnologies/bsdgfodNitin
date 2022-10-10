@@ -2653,21 +2653,21 @@ div:focus {
 
 .dasTckA1 {
     border: 1px solid #7d64f9;
-    color: #7d64f9;
+    color: white;
 }
 
 .dasTckA2 {
     border: 1px solid #fb9a9d;
-    color: #fb959b;
+    color: white;
 }
 .dasTckA3 {
     border: 1px solid #ffb573;
-    color: #ffb573;
+    color: white;
 }
 
 .dasTckA4 {
     border: 1px solid #2a61fd;
-    color: #2a61fd;
+    color: white
 }
 
 /**/
@@ -3376,7 +3376,7 @@ div:focus {
     }
 
     .NavK ul {
-        padding-top: 135px;
+        padding-top: 35px;
     }
 
     .NavK ul li {
@@ -3400,7 +3400,7 @@ div:focus {
 
     /*main*/
     .main {
-        padding-top: 120px;
+        padding-top: 0px;
         padding-left: 210px;
     }
 
@@ -3429,6 +3429,7 @@ div:focus {
         width: 95%;
         padding-left: 22px;
         padding-right: 16px;
+        margin-bottom: 19px;
     }
 
     .dasNuzI {
@@ -3579,7 +3580,7 @@ div:focus {
     }
 
     .dasJiaL {
-        width: 20%;
+        width:35%;
     }
 
     .dasJiaLI {
@@ -3780,7 +3781,7 @@ div:focus {
 
     /*main*/
     .main {
-        padding-top: 100px;
+        padding-top: 0px;
         padding-left: 180px;
     }
 
@@ -3809,6 +3810,7 @@ div:focus {
         width: 95%;
         padding-left: 18px;
         padding-right: 12px;
+        margin-bottom: 19px;
     }
 
     .dasNuzI {
@@ -3959,7 +3961,7 @@ div:focus {
     }
 
     .dasJiaL {
-        width: 23%;
+        width: 30%;
     }
 
     .dasJiaLI {
@@ -4579,19 +4581,19 @@ div:focus {
 
 .Tc-cfBDSI {
     border-radius: 3px;
-    background: #12131A;
-    border: 1px solid #515466;
+    background: #0d102c;
+    border: 1px solid #001cc1;
     color: #D8DAE5;
 }
 
 .Tc-cfBDSz p {
-    color: #FB6320;
+    color: #ffffff;
     font-weight: 600;
 }
 
 .Tc-Word {
     width: 100%;
-    color: #FF4E4E;
+    color: #ffffff;
 }
 
 .Tc-cfBza {
@@ -4623,7 +4625,7 @@ div:focus {
 }
 
 .Tc-czDS {
-    background: #060608;
+    background: #0d102c;
     border: none;
 }
 
@@ -4637,11 +4639,11 @@ div:focus {
 }
 
 .Tc-czDfcP p {
-    width: 18%;
+    width: 27%;
 }
 
 .Tc-czDfcB h3 {
-    color: #3E6FFB;
+    color: #dbdbdb;
     font-weight: bold;
     text-align: center;
 }
@@ -4656,11 +4658,11 @@ div:focus {
 }
 
 .Tc-czDSp {
-    color: #9A9EB2;
+    color: #dfdfdf;
 }
 
 .Tc-czlab p {
-    color: #9A9EB2;
+    color: #dfdfdf;
     font-size: 12px;
 }
 
@@ -4810,7 +4812,7 @@ div:focus {
 
     .Tc-cfBDI,
     .Tc-cfBDSI {
-        width: 600px;
+        width: 73%;
         padding: 0 20px;
         height: 44px;
         line-height: 44px;
@@ -4858,7 +4860,7 @@ div:focus {
     }
 
     .Tc-czDK {
-        width: 730px;
+        width: 470px;
     }
 
     .Tc-czBD {}
@@ -4875,7 +4877,7 @@ div:focus {
     .Tc-czDS {
         border-radius: 10px;
         margin-top: 20px;
-        padding: 20px 30px;
+        padding: 20px 0px;
     }
 
     .Tc-czDfc {
@@ -4886,7 +4888,10 @@ div:focus {
         line-height: 30px;
         font-size: 12px;
     }
-
+.infopara{
+    border: 1px solid #001cc169;
+    padding: 11px;
+}
     .Tc-czDfcB h3 {
         font-size: 24px;
         line-height: 30px;
@@ -6642,7 +6647,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         }
         @media only screen and (max-width: 1290px){
             .main {
-                padding-top: 90px;
+                padding-top: 24px;
                 padding-left: 0px;
                 min-width: 414px;
             }
@@ -6699,8 +6704,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
                 z-index: 99;
                 height: 100%;
                 width: 100%;
-                top: 74px;
-                right: 40px;
+                top: 16px;
+                right: 30px;
                 height: 22px;
                 width: 22px;
             }
@@ -6904,7 +6909,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
                     box-shadow: 0px 11px 15px -7pxrgba(0, 0, 0, 0.2),0px 24px 38px 3pxrgba(0, 0, 0, 0.14),0px 9px 46px 8pxrgba(0, 0, 0, 0.12);
                     background: #0d102c !important;
                     /* color: rgba(0,0,0,.87); */
-                    padding: 7% 100px!important;
+                    padding: 7% 37px!important;
                     border-width: 1px !important;
                     border-style: solid !important;
                     border-image: linear-gradient(to right, darkblue, darkorchid) 1 !important;

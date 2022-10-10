@@ -67,10 +67,10 @@ body {
     text-decoration: none;
 }
 li.Huans.active {
-    background: #0d102c;
+    background:linear-gradient(to right, #95378c00 0%, #372ba8 51%, rgb(143 34 163 / 29%) 100%);
     border-left: 4px solid #95378c;
     .NavA {
-        color: #95378c;
+        color: #ffffff;
         font-weight: 600;
     }
 }

@@ -1,25 +1,53 @@
+.dasTckNA {
+        
+    font-size: 19px;
+    border-radius: 0px;
+    width: 141px;
+    height: 46px;
+    line-height: 44px;
+    border-left: 1px solid darkblue;
+    border-right: 2px solid darkorchid;
+    border-top: 2px solid darkblue;
+    border-bottom: 2px solid darkorchid;
+    border-radius: 10px;
+  
+ 
 
+}
 
 
 .deposite:hover {
     color: white;
-    background: #7e61f9;
+    background-image: linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
+    border: none;
+    transition: 2s;
+     
+    
+   
 }
 
 .withdraw:hover{
-    background: #fb9a9d;
+    background-image: linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
     color: white;
+    border: none;
+    transition: 0.5s;
 }
 
 .account:hover{
-    background: #ffb573;
+    background-image: linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
     color: white;
+    border: none;
+    transition: 0.5s;
 }
 
 .lend:hover{
     
-    background: #2a61fd;
+    background-image: linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
     color: white;
+}
+
+.copytext{
+    font-size: 18px; margin-left: 10px; cursor: pointer;
 }
 
 .hdFSN img {
@@ -29,3 +57,80 @@
     border-radius: 50px;
     padding: 10px;
 }
+
+
+.sidesplit {
+    width: 84%;
+    border-right: 1px solid #734af363;
+   
+}
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    font-size: 12px;
+    background-color: #0d102c;
+    border-radius: 4px;
+    padding: 3px 15px 4px 15px;
+    top: -37px;
+    left: -32px;
+    width: 97px;
+    text-align: center;
+    
+  }
+  
+  .hover-text:hover .tooltip-text {
+    visibility: visible;
+  }
+
+  .spinner-wrapper{
+    width: 100%;
+    height: 70%;
+    background-color: #111323ab;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+  
+  .spinner {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  .spinner::before,
+  .spinner:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
+    animation: spin .5s infinite linear;
+  }
+  
+  .spinner:after {
+    width: 90%;
+    height: 90%;
+    background-color: #0f1225;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Simulate page content*/
