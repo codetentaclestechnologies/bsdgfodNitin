@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ethers } from 'ethers';
 import { GlobalService } from 'src/app/core/services/global.service';
 import { environment } from 'src/environments/environment';
 
@@ -18,53 +19,42 @@ export class HeaderComponent implements OnInit {
   defaultAccount: any;
 
   constructor(private cs: GlobalService) {
-    
-   
+
+
   }
 
 
   ngOnInit(): void {
-    
-    this.connect();
-  }
-  async connect() {
-    await this.cs.connectContract();
-    this.defaultAccount = localStorage.getItem('address') ?? "";
-    this.tronweb = this.cs.tronweb;
-    window.addEventListener('message', (res) => {
-      
-      if (res.data.message && res.data.message.action == "setAccount") {
-        
-        if (this.tronweb) {
-          debugger
-          if (this.defaultAccount!="" && res.data.message.data.address != this.defaultAccount) {
-            window.location.reload();
-          }
-        } 
-      }
-  });
-    await this.getaccount();
+    this.getAccount();
   }
 
-  async getaccount() {
-    await this.cs
-      .connectContract()
-      .then(async (balance) => {
-        this.address = balance;
-        console.log(this.tronweb);
+  connect()
+  {
+    this.cs.connectContract();
+  }
 
+  async getAccount() {
+    await this.cs.init();
+    this.cs.getWalletObs().subscribe((data: any) => {
+      if (ethers.utils.isAddress(data) && data!=this.address) {
+
+        this.address = data;
         this.isConnected = true;
-        localStorage.setItem('address', this.address);
-
+        console.log("connected")
         this.startTime();
-      })
-      .catch((error) => (this.isConnected = error));
+
+      }
+      else if(!ethers.utils.isAddress(data)) {
+        this.isConnected = false;
+      }
+    });
   }
+
 
   async startTime() {
     try {
       this.runTime = await this.cs.startTime();
-   
+
     } catch (e) {
       console.log(e);
     }
@@ -73,10 +63,10 @@ export class HeaderComponent implements OnInit {
   async depositeCountDown() {
     try {
       let OrderLength = await this.cs.getOrderLength(this.address);
-      if(OrderLength>0){
-        let unfreeze = await this.cs.orderInfos(this.address,OrderLength)
-        this.depositCountDown  = parseInt(unfreeze)*1000
-      }else {
+      if (OrderLength > 0) {
+        let unfreeze = await this.cs.orderInfos(this.address, OrderLength)
+        this.depositCountDown = parseInt(unfreeze) * 1000
+      } else {
         this.depositCountDown = 0
       }
     } catch (e) {

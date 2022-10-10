@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ethers } from 'ethers';
 import { ToastrService } from 'ngx-toastr';
 import { GlobalService } from 'src/app/core/services/global.service';
 import { environment } from 'src/environments/environment';
@@ -19,15 +20,16 @@ export class DepositeDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private cs: GlobalService,
     private toster:ToastrService
-  ) {}
+  ) {
+  
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  
+  }
 
   numberOnly(event: any): boolean {
-    const charCode = event.which ? event.which : event.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-      return false;
-    }
+    
     if (event.target.value !== '') {
       this.depositeAmount = parseInt(event.target.value);
       this.total = (this.depositeAmount * 200) / 1000 + this.depositeAmount;
@@ -55,20 +57,18 @@ export class DepositeDialogComponent implements OnInit {
       this.inputOk = false;
     }
     if (this.inputOk) {
-      let amount = await this.cs.toSun(this.depositeAmount);
+      let amount =  ethers.utils.parseEther(this.depositeAmount+"");
       let isAppr = await this.cs.isApprove(localStorage.getItem('address'),environment.bsgAddr);
       if(isAppr){
-        await this.cs.depositeAmount(amount)
-        await this.sleep(2000).then(async ()=>{
-            location.reload()
-        })
+        let txn:any =  await this.cs.depositeAmount(amount)
+        await txn.wait(3);
+        location.reload();
     }else{
-       await this.cs.setApprove(environment.bsgAddr).then(async ()=>{
-            await this.cs.depositeAmount(amount)
-            await this.sleep(2000).then(async ()=>{
-                location.reload()
-            })
-        })
+       let txn:any = await this.cs.setApprove(environment.bsgAddr);
+        await txn.wait(3);
+        txn = await this.cs.depositeAmount(amount)
+        await txn.wait(3);
+        location.reload();
     }
     }
   }catch(e:any){

@@ -7,6 +7,8 @@ import { SplitAccountDialogComponent } from './split-account-dialog/split-accoun
 import { WithdrawDialogComponent } from './withdraw-dialog/withdraw-dialog.component';
 import { environment } from 'src/environments/environment';
 import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
+import { ethers } from 'ethers';
+import { LoginModalComponent } from '../login-modal/login-modal.component';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -20,7 +22,7 @@ export class DashboardHomeComponent implements OnInit {
   totalUser: any;
   latestDeposit: any;
   luckUsers: any;
-  zeroAddr = 'T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb';
+  zeroAddr = environment.zeroAddr;
   top3LuckyPlayers: any;
   hourStart: any;
   hourEnd: any;
@@ -49,6 +51,28 @@ export class DashboardHomeComponent implements OnInit {
     }
 
   async ngOnInit() {
+    this.getAccount();
+  }
+
+  async getAccount()
+  {
+    await this.cs.init();
+    this.cs.getWalletObs().subscribe((data: any) => {
+      if(ethers.utils.isAddress(data) && data!=this.address){
+      
+      this.address = data;
+      this.isConnected = true;
+      console.log("connected")
+      this.getDetails();
+      
+      }
+      else{
+        this.isConnected = false;
+      }
+    });
+  }
+
+  async getDetails(){
     this.luckUsers = [];
     this.latestDeposit = [];
     this.top3LuckyPlayers = [];
@@ -67,13 +91,13 @@ export class DashboardHomeComponent implements OnInit {
   }
 
   async getbalance() {
-    this.trxbalance = await this.cs.getTrxBalance();
+    this.trxbalance = (await this.cs.getUserBalance())/1e18;
     this.usdtBalance = await this.cs.getUstdBalance();
   }
   async luckPoolFn() {
     this.luckPool = (await this.cs.luckPool()).toFixed(2);
   }
-  async starPoolfn() {
+  async starPoolfn() {  
     this.starPool = (await this.cs.starPool()).toFixed(2);
   }
   async topPoolfn() {
@@ -104,7 +128,7 @@ export class DashboardHomeComponent implements OnInit {
         userLatestOrderNum,
         userCount
       );
-      var latestAmount = parseInt(amount) / 1000000;
+      var latestAmount = parseInt(amount) / 1e18;
       let date = this.getDate(parseInt(start) * 1000);
       this.latestDeposit.push({
         amount: latestAmount,
@@ -120,11 +144,13 @@ async getIncome(){
   let { referrer, start, level, maxDeposit, totalDeposit, totalRevenue } =
   await this.cs.userInfo(localStorage.getItem('address'));
   this.totalWithdrawn = await this.cs.fromSun(totalRevenue);
-  this.referrer =await this.cs.fromHex(referrer);
-  
+  this.referrer =referrer;
   if(this.referrer!=this.zeroAddr)
   {
     this.showRegister = false;
+  }
+  else{
+    this.register()
   }
 }
   async luckyPlayes() {
@@ -201,7 +227,8 @@ async getIncome(){
   }
 
   register() {
-    this.dialog.open(RegisterDialogComponent, {
+
+    this.dialog.open(LoginModalComponent, {
       panelClass: 'bg',
       data:this.ref
     });
