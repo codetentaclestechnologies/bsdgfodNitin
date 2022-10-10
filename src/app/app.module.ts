@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RootHomeComponent } from './layout/root-home/root-home.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -27,11 +28,11 @@ import { RootHomeComponent } from './layout/root-home/root-home.component';
     BrowserAnimationsModule,
     MatDialogModule,
     HttpClientModule,
-    // ToastrModule.forRoot(
-    //   {  timeOut: 10000,
-    //     positionClass: 'toast-top-right',
-    //     preventDuplicates: true,}
-    // )
+    ToastrModule.forRoot(
+      {  timeOut: 10000,
+        positionClass: 'toast-top-right',
+        preventDuplicates: true,}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent],

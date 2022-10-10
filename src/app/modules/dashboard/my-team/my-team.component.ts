@@ -21,9 +21,9 @@ export class MyTeamComponent implements OnInit {
 
  async updateTeamInfos(from:number,to:number){
  let teamDeposit =  await this.cs.getTeamDeposit(localStorage.getItem('address'))
-    this.maxDirectDeposit = (parseInt(teamDeposit[0])/1000000).toFixed(2);
-    this.otherDirectDeposit = (parseInt(teamDeposit[1])/1000000).toFixed(2);
-    this.teamTotalDeposit = (parseInt(teamDeposit[2])/1000000).toFixed(2);
+    this.maxDirectDeposit = (parseInt(teamDeposit[0])/1e18).toFixed(2);
+    this.otherDirectDeposit = (parseInt(teamDeposit[1])/1e18).toFixed(2);
+    this.teamTotalDeposit = (parseInt(teamDeposit[2])/1e18).toFixed(2);
   let {teamNum} = await this.cs.userInfo(localStorage.getItem('address'))
   this.totalInvited = teamNum
   }

@@ -30,14 +30,12 @@ export class RegisterDialogComponent implements OnInit {
   
 
   async depositeConfirm() {
-    debugger
+    
     try{
-        await this.cs.register(this.data).then(r=>{
-          debugger
-        })
-        await this.sleep(2000).then(async ()=>{
+      let txn:any = await this.cs.register(this.data);
+      await txn.wait(3);
             location.reload()
-        })
+      
     
     
   }catch(e){

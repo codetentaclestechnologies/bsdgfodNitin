@@ -27,10 +27,10 @@ export class SplitAccountDialogComponent implements OnInit {
     let splitAmt = 0;
     let { referrer, start, level, maxDeposit, totalDeposit, totalRevenue } =
       await this.cs.userInfo(localStorage.getItem('address'));
-      debugger
-    let userMaxDeposit = parseInt(maxDeposit) / 1000000;
+  
+    let userMaxDeposit = parseInt(maxDeposit) / 1e18;
     splitAmt = await this.cs.splitAmount(localStorage.getItem('address'))
-    debugger
+
     this.freezingAmt = splitAmt
   
   }
