@@ -9,7 +9,8 @@ a:hover {
 }
 html {
     width: 100%;
-    height: 100%
+    height: 100%;
+    background: #0d102c;
 }
 
 body {
@@ -2801,7 +2802,7 @@ div:focus {
 }
 
 .dasJiaCn {
-    background: #3A3D4D;
+    background: #0d102c8f;
     color: #FFF;
     text-align: center;
 }
@@ -2991,12 +2992,11 @@ div:focus {
         width: 250px;
     }
 
-    .NavK ul {
-        padding-top: 39px;
-    }
+    
 
     .NavK ul li {
         padding: 9px 28px;
+        border-left: 4px solid #191e4a;
     }
 
     .NavA {
@@ -4516,11 +4516,9 @@ div:focus {
 }
 
 .Tc-qkN {
-    background: #3C425433;
-    
-    align-content: center
+    background: #0d102c;
+    align-content: center;
 }
-
 .Tc-qkDK,
 .Tc-qkb,
 .Tc-qkNF {
@@ -4536,17 +4534,17 @@ div:focus {
 }
 
 .Tc-qkNS {
-    color: #3E6FFB;
+    color: #dfdfdf;
 }
-
+/* 
 .Tc-qkNF .Tc-qkNH,
 .Tc-qkNF .Tc-qkNS {
     font-weight: 600;
-}
+} */
 
 .Tc-qkBut {
     display: block;
-    background: #3E6FFB;
+    background: #dfdfdf;
     color: #FFF;
     text-align: center;
 }
@@ -4754,10 +4752,10 @@ div:focus {
     }
 
     .Tc-qkN {
-        width: 756px;
+        width: 548px;
         height: 470px;
     }
-
+    
     .Tc-qkDK,
     .Tc-qkb,
     .Tc-qkNF {
@@ -4769,8 +4767,9 @@ div:focus {
     }
 
     .Tc-qkNz {
-        height: 34px;
-        font-size: 14px;
+        height: 42px;
+        font-size: 16px;
+        border-bottom: 1px solid #1339e736;
     }
 
     .Tc-qkNF {
@@ -4805,12 +4804,12 @@ div:focus {
     .Tc-cfBDH {
         font-size: 14px;
         line-height: 20px;
-        width: 80px;
+        width: 133px;
         padding-right: 15px;
     }
 
     .Tc-cfBDS {
-        width: 805px;
+        width: 77%;
         height: 80px;
         padding-bottom: 10px;
     }
