@@ -6923,6 +6923,6 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
                 .contributebutton {
                     border-radius: 10px  !important;
                 }
-                .a {
+                a {
                    cursor: pointer !important;
                 }
