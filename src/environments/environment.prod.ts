@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  bsgAddr : 'THnrGp2eKDmtheeFZrJtaYp1DjnJqUUetj',
-  usdtAddr : 'TJkEseKjoYHt3CEWknWyunFULYYgezRsNe',
-  refererDefault : 'TDUyQXCakThJbJH5b7wD1Ks51bM9wRwdCE',
-  zeroAddr : 'T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb'
+  bsgAddr : '0xf1d56BEc7c0DB7C314E834e1a38EEfC37865aCcf',
+  usdtAddr : '0xd3521B5dD10061245ABf863A3ae36732171084c3',
+  refererDefault : '0x350F84C2f5272973646342Be1AdbE232324A552E',
+  zeroAddr : '0x0000000000000000000000000000000000000000'
 };

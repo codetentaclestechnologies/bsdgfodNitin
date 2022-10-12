@@ -14,3 +14,53 @@ body {
     background: rgba(0,4,32,0.98);
     border: 1px solid #544aaa;
 }
+
+
+.spinner-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #111323ab;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+  
+  .spinner-wrapper .spinner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  .spinner-wrapper .spinner::before,
+  .spinner-wrapper .spinner:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .spinner-wrapper .spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(to right, #95378c 0%, #372ba8 51%, rgb(143, 34, 163) 100%);
+    animation: spin .5s infinite linear;
+  }
+  
+  .spinner-wrapper .spinner:after {
+    width: 90%;
+    height: 90%;
+    background-color: #0f1225;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

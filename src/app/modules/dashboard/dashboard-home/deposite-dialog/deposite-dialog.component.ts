@@ -15,6 +15,7 @@ export class DepositeDialogComponent implements OnInit {
   total = 0;
   userMaxDeposit = 0;
   inputOk = false;
+  showSpinner = false;
   constructor(
     public dilogRef: MatDialogRef<DepositeDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -48,7 +49,7 @@ export class DepositeDialogComponent implements OnInit {
       this.depositeAmount >= 50 &&
       this.depositeAmount >= this.userMaxDeposit
     ) {
-      if (this.depositeAmount <= 2000) {
+      if (this.depositeAmount <= 2000) {  
         this.inputOk = true;
       } else {
         this.inputOk = false;
@@ -61,17 +62,21 @@ export class DepositeDialogComponent implements OnInit {
       let isAppr = await this.cs.isApprove(localStorage.getItem('address'),environment.bsgAddr);
       if(isAppr){
         let txn:any =  await this.cs.depositeAmount(amount)
+        this.showSpinner = true;
         await txn.wait(3);
         location.reload();
     }else{
        let txn:any = await this.cs.setApprove(environment.bsgAddr);
+       this.showSpinner = true;
         await txn.wait(3);
-        txn = await this.cs.depositeAmount(amount)
+        txn = await this.cs.depositeAmount(amount);
+        
         await txn.wait(3);
         location.reload();
     }
     }
   }catch(e:any){
+    this.showSpinner = false;
     console.log(e);
     this.toster.error(e)
   }
