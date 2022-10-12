@@ -163,9 +163,7 @@ export class GlobalService {
     return parseInt(await this.mainContract.getDepositorsLength());
   }
   async depositors(i: any) {
-    return this.tronweb.address.fromHex(
-      await this.mainContract.depositors(i - 1)
-    );
+      return await this.mainContract.depositors(i - 1)
   }
   async depositorsAmount(
     userLatestDeposit: any,
@@ -183,9 +181,7 @@ export class GlobalService {
     return parseInt(await this.mainContract.getDayLuckLength(curDay));
   }
   async dayLuckUsers(curDay: any, i: any) {
-    return this.tronweb.address.fromHex(
-      await this.mainContract.dayLuckUsers(curDay, i - 1)
-    );
+    return await this.mainContract.dayLuckUsers(curDay, i - 1)
   }
   async dayLuckUsersDeposit(curDay: any, i: any) {
     return (
@@ -222,12 +218,12 @@ export class GlobalService {
 
   }
   async withdrawAmount() {
-    return this.mainContract.withdraw();
+    return await this.mainContract.withdraw();
   }
   async setApprove(to: any) {
     var amount =
       '115792089237316195423570985008687907853269984665640564039457584007913129639935';
-    await this.usdtContract
+    return await this.usdtContract
       .approve(to, amount);
   }
 

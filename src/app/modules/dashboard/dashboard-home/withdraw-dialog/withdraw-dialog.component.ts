@@ -9,6 +9,7 @@ import { GlobalService } from 'src/app/core/services/global.service';
 })
 export class WithdrawDialogComponent implements OnInit {
   rewardInfo: any;
+  showSpinner = false;
   constructor(
     private cs: GlobalService,
     private dilogRef: MatDialogRef<WithdrawDialogComponent>,
@@ -59,10 +60,17 @@ export class WithdrawDialogComponent implements OnInit {
   }
 
   async withdrawAmount() {
-    await this.cs.withdrawAmount();
-    await this.sleep(2000).then(async () => {
-      location.reload();
-    });
+    try{
+    let txn = await this.cs.withdrawAmount();
+    this.showSpinner = true;
+    await txn.wait(3);
+    this.showSpinner = false;
+    location.reload();
+    }
+    catch(e:any)
+    {
+      this.showSpinner = false;
+    }
   }
   sleep(ms: any) {
     return new Promise((resolve) => setTimeout(resolve, ms));

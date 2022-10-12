@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 import { ethers } from 'ethers';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -45,7 +47,7 @@ export class DashboardHomeComponent implements OnInit {
   referrer: any;
   showRegister: boolean=true;
   constructor(private cs: GlobalService, private dialog: MatDialog , private router:Router,
-    route: ActivatedRoute) {
+    route: ActivatedRoute,private clipboard: Clipboard,private toastr:ToastrService) {
       
       this.ref = this.cs.getUplineid(route);
     }
@@ -58,7 +60,7 @@ export class DashboardHomeComponent implements OnInit {
   {
     await this.cs.init();
     this.cs.getWalletObs().subscribe((data: any) => {
-      if(ethers.utils.isAddress(data) && data!=this.address){
+      if(data!=this.address && ethers.utils.isAddress(data)){
       
       this.address = data;
       this.isConnected = true;
@@ -297,6 +299,18 @@ async getIncome(){
     } catch (e) {
       console.log(e);
     }
+  }
+
+  copyRef()
+  {
+    this.clipboard.copy(this.myAddress);
+    this.toastr.success("Copied!!!")
+  }
+
+  copyContractAddress()
+  {
+    this.clipboard.copy(this.contractAddress);
+    this.toastr.success("Copied!!!")
   }
   
 }

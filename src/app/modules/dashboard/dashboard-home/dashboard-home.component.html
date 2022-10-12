@@ -1,9 +1,5 @@
 
- <div class="spinner-wrapper ">
-    <div class="spinner">
-      
-    </div>
-  </div>
+
 <section>
   <div class="container-fluid" style="padding: 4px">
     <div class="Huans madk flex fl-bet">
@@ -128,7 +124,7 @@
                           {{ contractAddress }}
                         </div>
 
-                        <div class="hover-text" style="position: relative">
+                        <div (click)="copyContractAddress()" class="hover-text" style="position: relative">
                           <i class="fa-regular fa-copy text-white copytext"></i>
                           <span class="tooltip-text" id="top">copy</span>
                           <!-- <span class="tooltip-text" id="top"
@@ -394,7 +390,7 @@
                     [value]="myAddress"
                   />
                   <a
-                    [cdkCopyToClipboard]="myAddress"
+                    (click)="copyRef()"
                     data-toggle="tooltip"
                     data-placement="top"
                     title="Copy"

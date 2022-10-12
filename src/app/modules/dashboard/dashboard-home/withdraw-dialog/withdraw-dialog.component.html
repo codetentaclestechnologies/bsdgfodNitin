@@ -1,4 +1,9 @@
-	<div class="TcNr flexC fl-cen">
+<div class="spinner-wrapper" [ngClass]="{'d-none':!showSpinner}">
+    <div class="spinner">
+      
+    </div>
+  </div>
+<div class="TcNr flexC fl-cen">
 		<div class="Tc-qkN  flexC fl-cen" *ngFor="let item of rewardInfo">
 			<!--取款-开始-->
 			<div class="Tc-qkDK" >
