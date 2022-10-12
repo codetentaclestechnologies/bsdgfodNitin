@@ -2,7 +2,7 @@
         background: linear-gradient(rgba(6, 138, 243, 0.1803921569), rgba(0, 0, 0, 0.3215686275)), url(/assets/images/homeimage/08-scaled-e1614740007997.jpg); 
       
        background-color: #E4EAFF;
-      min-height: 80%;
+      min-height: 70%;
        background-position: top center;
        background-repeat: no-repeat;
        background-size: cover;
@@ -107,7 +107,7 @@
     width: auto;
     color: rgb(255, 255, 255);
     text-decoration: none;
-    white-space: nowrap;
+    
     min-height: 0px;
     min-width: 0px;
     max-height: none;
@@ -474,9 +474,10 @@
 }
 
 .bsgseventhsection h3 {
-    font-size: 42px;
+    font-size: 38px;
     color: #ffffff;
     font-weight: 600;
+    line-height: normal;
 }
 .bsgseventhsection p {
     font-size: 18px;
@@ -487,19 +488,9 @@
 }
 
 
-@media only screen and (min-width: 300px) and (max-width: 900px){
-    .sixthline{
-        display: none;
-    }
-    .bsgseventhsection {
-        
-        padding: 10%;
-    }
-    .sixthsection{
-        padding: 10%;
-        position: relative;
-    }
-}
+
+
+
 @media only screen and (min-width: 768px) and (max-width: 1200px){
     .overlay {
        
@@ -524,23 +515,44 @@
         margin: auto;
     }
 }
-@media only screen and (min-width: 300px) and (max-width: 765px){
-    .overlay{
-        padding-top: 23%;
-    }
-    .root-home {
+@media only screen and (min-width: 300px) and (max-width: 768px){
+     .overlay{
+         padding-top: 23%;
+     }
+    // .root-home {
        
-        min-height: 90%;
+    //     min-height: 90%;
+        
+    // }
+    // .root-home {
+        
+    //     min-height: 90vh;
+        
+    // }
+    .overlay {
+       
+        height: 91vh;
         
     }
-    .bsgthirdsections[_ngcontent-lih-c18] {
+    .bsgthirdsections {
         background: #191e4a;
         padding-top: 15%;
-        padding: 7% 10% !important;
+        padding: 7% 0% !important;
     }
 }
 
-
+// @media only screen and (min-width: 100px) and (max-width: 400px){
+//     .root-home {
+        
+//         min-height: 120vh;
+        
+//     }
+//     .overlay {
+       
+//         height: 120vh;
+        
+//     }
+// }
 .row {
     --bs-gutter-x: 0 !important;
     --bs-gutter-y: 0;
@@ -566,3 +578,58 @@
 .wallethead{
     font-size: 22px;
 }
+
+@media only screen and (min-width: 300px) and (max-width: 700px){
+   
+}
+
+@media only screen and (max-width: 414px) {
+    .sixthline{
+        display: none;
+    }
+    .bsgseventhsection {
+        
+        padding: 10%;
+    }
+    .sixthsection{
+        padding: 10%;
+        position: relative;
+    }
+    .button-image{
+        display: none;
+    }
+    .grppad {
+        padding-top: 43px;
+        padding-bottom: 43px;
+    }
+}
+@media only screen and (max-width: 768px) {
+   .mobile-view{
+    display: none;
+   }
+   .root-home {
+    min-height: 80vh;
+}
+.button-image{
+    display: none;
+}
+.grppad {
+    padding-top: 43px;
+    padding-bottom: 43px;
+}
+}
+@media only screen and (max-width: 414px) {
+    .mobile-view{
+     display: none;
+    }
+    .root-home {
+     min-height: 90vh;
+ }
+ .button-image{
+     display: none;
+ }
+ .grppad {
+     padding-top: 43px;
+     padding-bottom: 43px;
+ }
+ }
