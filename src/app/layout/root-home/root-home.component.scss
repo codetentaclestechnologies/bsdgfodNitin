@@ -499,7 +499,7 @@
     .root-home {
         background: linear-gradient(rgba(6, 138, 243, 0.1803921569), rgba(0, 0, 0, 0.3215686275)), url(/assets/images/homeimage/08-scaled-e1614740007997.jpg);
         background-color: #E4EAFF;
-        min-height: 80%;
+        min-height: 70%;
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -514,6 +514,9 @@
         width: 92%;
         margin: auto;
     }
+    .mobile-view{
+        display: none;
+       }
 }
 @media only screen and (min-width: 300px) and (max-width: 768px){
      .overlay{
@@ -617,6 +620,9 @@
     padding-top: 43px;
     padding-bottom: 43px;
 }
+.rootpara{
+    display: none;
+ }
 }
 @media only screen and (max-width: 414px) {
     .mobile-view{
@@ -631,5 +637,8 @@
  .grppad {
      padding-top: 43px;
      padding-bottom: 43px;
+ }
+ .rootpara{
+    display: none;
  }
  }
