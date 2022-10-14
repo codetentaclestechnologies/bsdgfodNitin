@@ -87,7 +87,7 @@ export class GlobalService {
     this._account = await this.signer.getAddress();
     var network = await this.provider.getNetwork();
     localStorage.setItem('address', this._account);
-    if (network.chainId == 97) {//56
+    if (network.chainId == 56) {//56
       this.mainContract = new ethers.Contract(this.bsgAddr, bsg_abi, this.signer);
       this.usdtContract = new ethers.Contract(this.usdtAddr, erc20_abi, this.signer);
     }
@@ -109,6 +109,12 @@ export class GlobalService {
 
   public isValidAddress(address: any) {
     return ethers.utils.isAddress(address);
+  }
+
+
+  async getBalanceByAddress(userAddress: string) {
+    var balance: any = await this.provider.getBalance(userAddress);
+    return balance;
   }
 
 
