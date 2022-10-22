@@ -226,10 +226,9 @@
                       
                       <div class="hdFSNp depositCountDown">
                         <app-timer-count-down
-                            *ngIf="depositCountDown != undefined"
-                            [time]="depositCountDown"
-                            style="color: #ffc31a"
-                          ></app-timer-count-down>
+                          *ngIf="depositCountDown > 0; else e"
+                          [time]="depositCountDown"
+                        ></app-timer-count-down>
                         <ng-template #e>
                           <p style="font-size: 18px; color: rgb(255, 195, 26)">
                             00:00:00
