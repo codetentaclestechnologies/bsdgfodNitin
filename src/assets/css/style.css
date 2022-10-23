@@ -2545,6 +2545,7 @@ div:focus {
     left: 0;
     z-index: 998;
     background: #191e4a;
+    z-index: 0;
 }
 
 .NavA {
