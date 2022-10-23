@@ -2545,6 +2545,7 @@ div:focus {
     left: 0;
     z-index: 998;
     background: #191e4a;
+    z-index: 0;
 }
 
 .NavA {
@@ -5546,7 +5547,7 @@ div:focus {
 
     .Tc-cfBDI,
     .Tc-cfBDSI {
-        width: 100%;
+        width: 87%;
         padding: 0 12px;
         height: 36px;
         line-height: 36px;
@@ -6709,7 +6710,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
                 box-sizing: border-box;
                 cursor: pointer;
                 position: absolute;
-                z-index: 99;
+                z-index: 0;
                 height: 100%;
                 width: 100%;
                 top: 16px;
@@ -6917,7 +6918,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
                     box-shadow: 0px 11px 15px -7pxrgba(0, 0, 0, 0.2),0px 24px 38px 3pxrgba(0, 0, 0, 0.14),0px 9px 46px 8pxrgba(0, 0, 0, 0.12);
                     background: #0d102c !important;
                     /* color: rgba(0,0,0,.87); */
-                    padding: 7% 37px!important;
+                    padding: 7% 17px!important;
                     border-width: 1px !important;
                     border-style: solid !important;
                     border-image: linear-gradient(to right, darkblue, darkorchid) 1 !important;
@@ -6979,4 +6980,17 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
                     transform: rotate(360deg);
                   }
                 }
+
+
+                @media only screen and (max-width: 768px)
+                {
+                    .Tc-cfBDI, .Tc-cfBDSI {
+                        width: 69%;
+                        padding: 0 12px;
+                        height: 36px;
+                        line-height: 36px;
+                        font-size: 12px;
+                    }
+                }
+
                 

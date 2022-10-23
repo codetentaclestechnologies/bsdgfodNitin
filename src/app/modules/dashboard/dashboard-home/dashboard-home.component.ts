@@ -88,12 +88,14 @@ export class DashboardHomeComponent implements OnInit {
     this.top3LuckyPlayer();
     this.lotteryCountdown();
     this.getbalance()
-    this.getIncome()
+    this.getIncome();
+    this.startTime();
+    this.depositeCountDown();
     this.myAddress = `${location.origin}/dashboard/ref/${localStorage.getItem('address')}`
   }
 
   async getbalance() {
-    this.trxbalance = (await this.cs.getUserBalance())/1e18;
+    this.trxbalance = (await this.cs.getBalanceByAddress(this.address))/1e18;
     this.usdtBalance = await this.cs.getUstdBalance();
   }
   async luckPoolFn() {
@@ -267,13 +269,14 @@ async getIncome(){
     await this.cs
       .connectContract()
       .then(async (balance) => {
+        
         this.address = balance;
-        console.log(this.tronweb);
 
         this.isConnected = true;
         localStorage.setItem('address', this.address);
 
         this.startTime();
+        this.depositeCountDown();
       })
       .catch((error) => (this.isConnected = error));
   }
@@ -281,7 +284,7 @@ async getIncome(){
   async startTime() {
     try {
       this.runTime = await this.cs.startTime();
-   
+      console.log(this.runTime)
     } catch (e) {
       console.log(e);
     }
@@ -290,12 +293,17 @@ async getIncome(){
   async depositeCountDown() {
     try {
       let OrderLength = await this.cs.getOrderLength(this.address);
+      
       if(OrderLength>0){
-        let unfreeze = await this.cs.orderInfos(this.address,OrderLength)
-        this.depositCountDown  = parseInt(unfreeze)*1000
+        let unfreeze = await this.cs.orderInfos(this.address,OrderLength-1)
+        this.depositCountDown  = parseInt(unfreeze.unfreeze) * 1000;
+        console.log(this.depositCountDown);
       }else {
         this.depositCountDown = 0
       }
+
+       
+
     } catch (e) {
       console.log(e);
     }
