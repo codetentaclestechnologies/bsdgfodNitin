@@ -251,11 +251,10 @@ export class GlobalService {
   }
   async depositBySplit(tAmount: any) {
     return await this.mainContract
-      .depositBySplit(this.tronweb.toSun(tAmount))
-      .send({ feeLimit: 5000e6, callValue: 0 });
+      .depositBySplit(ethers.utils.parseEther(tAmount));
   }
   async transferBySplit(receiver: any, tAmount: any, splitAmt: any) {
-    if (this.tronweb.isAddress(receiver)) {
+    if (ethers.utils.isAddress(receiver)) {
       if (
         tAmount >= 50 &&
         tAmount <= 2000 &&
@@ -263,8 +262,7 @@ export class GlobalService {
         tAmount <= splitAmt
       ) {
         return await this.mainContract
-          .transferBySplit(receiver, this.tronweb.toSun(tAmount))
-          .send({ feeLimit: 5000e6, callValue: 0 });
+          .transferBySplit(receiver, ethers.utils.parseEther(tAmount));
       }
     }
   }
