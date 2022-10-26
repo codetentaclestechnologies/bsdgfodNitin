@@ -37,6 +37,7 @@ export class SplitAccountDialogComponent implements OnInit {
   async depositeFn(){
     try{
       if(parseInt(this.tAmount) >= 50 && parseInt(this.tAmount)<= 2000 && parseInt(this.tAmount) % 50 == 0 && parseInt(this.tAmount) <= this.freezingAmt){
+        debugger
         await this.cs.depositBySplit(parseInt(this.tAmount))
     }
     }catch(e:any){
@@ -47,6 +48,7 @@ export class SplitAccountDialogComponent implements OnInit {
   }
   async transferFreezing(){
     try{
+      debugger
       await this.cs.transferBySplit(this.receiver,parseInt(this.tAmount),this.freezingAmt)
     }catch(e:any){
       console.log(e);

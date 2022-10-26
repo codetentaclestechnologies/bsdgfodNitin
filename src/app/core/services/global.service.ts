@@ -251,7 +251,7 @@ export class GlobalService {
   }
   async depositBySplit(tAmount: any) {
     return await this.mainContract
-      .depositBySplit(ethers.utils.parseEther(tAmount));
+      .depositBySplit(ethers.utils.parseEther(tAmount.toString()));
   }
   async transferBySplit(receiver: any, tAmount: any, splitAmt: any) {
     if (ethers.utils.isAddress(receiver)) {
@@ -262,7 +262,7 @@ export class GlobalService {
         tAmount <= splitAmt
       ) {
         return await this.mainContract
-          .transferBySplit(receiver, ethers.utils.parseEther(tAmount));
+          .transferBySplit(receiver, ethers.utils.parseEther(tAmount.toString()));
       }
     }
   }
