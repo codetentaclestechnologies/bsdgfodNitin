@@ -18,7 +18,7 @@ body {
     min-height: 100%;
     margin: 0;
     color: #252525;
-    background-color: #222840;
+    background-color: #0d102c;
     background-repeat: no-repeat;
     font-size: 0;
     background-attachment: fixed;
@@ -2596,11 +2596,11 @@ div:focus {
     position: absolute;
 }
 
-.madk {
+/* .madk {
     width: 100%;
     min-height: 85vh;
     overflow: auto;
-}
+} */
 
 .madbck {
     background:#191e4a;

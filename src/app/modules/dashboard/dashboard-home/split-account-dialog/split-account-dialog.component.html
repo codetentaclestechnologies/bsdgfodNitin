@@ -15,7 +15,7 @@
 					</div>					
 					<div class="Tc-cfBDS flex">
 						<input type="text" placeholder="" value="" class="Tc-cfBDSI Huans tAmount" [(ngModel)]="tAmount">
-						<div class="Tc-cfBDSz flexC fl-cen"><img src="assets/images/Group.png"><p class="mb-0" >BUSD</p></div>
+						<div class="Tc-cfBDSz flexC fl-cen"><img src="assets/images/busd.png"><p class="mb-0" >BUSD</p></div>
 						<div class="Tc-Word">
 							The ratio of 50
 							<!--{cn} 请输入50的倍数-->
@@ -31,6 +31,12 @@
 						<input type="text" placeholder="" value="" class="Tc-cfBDSI Huans receiver" [(ngModel)]="receiver">
 					</div>
 				</div>	
+				<div class="Tc-cfBD flex">
+					<p class="text-danger alret "  ><b>Note:</b> Use only Metamask or Trustwaller address or registered Address with DISP</p>
+				</div>	
+
+
+				
 				<div class="Tc-cfBmz flexC ">
 					<a (click)="depositeFn()" class="contributebutton1">
 						Deposit
