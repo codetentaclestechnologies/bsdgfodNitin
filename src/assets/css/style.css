@@ -6993,4 +6993,12 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
                     }
                 }
 
+                @media only screen and (max-width: 395px){
+                    .main {
+                        padding-top: 90px;
+                        padding-left: 0px;
+                        min-width: 333px !important;
+                    }
+                }
+
                 
